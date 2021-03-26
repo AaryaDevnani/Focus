@@ -4,7 +4,7 @@ const Register = () => {
     return (
         <form className='add-form' >
         <div className='form-contro'>
-            <label className='label'>Guardian Name</label>
+            <label className='label'>Parent/Guardian Username</label>
             <input
              type='text' required='required'  
              placeholder='Enter Name' 

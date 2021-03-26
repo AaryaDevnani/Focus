@@ -1,24 +1,30 @@
 import { BrowserRouter as Router,  Switch,  Route } from "react-router-dom";
 import './App.css';
 import Home from './components/Home'
-import LoginRegister from './components/LoginRegister'
+import Forum from './components/Forum'
+import ForumLabel from './components/ForumLabel'
 import NavBar from './components/NavBar'
+import Logout from "./components/Logout";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <header className="App-header">
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path='/login' component={LoginRegister} />
-            <Route exact path='/register' component={LoginRegister} />
-          </Switch>
-
-        </Router>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <header className="App-header">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/register' component={Register} />
+              <Route exact path='/logout' component={Logout} />
+              <Route exact path='/forums' component={Forum} />
+              <Route exact path='/forum/:label' component={ForumLabel} />
+            </Switch>
+        </header>
+      </div>
+    </Router>
   );
 }
 
