@@ -72,7 +72,7 @@ const Login = () => {
                 onChange={handleOnChange}
             /> 
         </div>
-        <input type='submit' className='btn btn-block' value='Login'/>
+        <input type='submit' className='butn butn-block' value='Login'/>
     </form>
     )
 }

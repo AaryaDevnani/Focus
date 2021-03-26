@@ -33,7 +33,7 @@ const Register = () => {
             <input type='password' required='required'
             /> 
         </div>
-        <input type='submit' className='btn btn-block' value='Register'/>
+        <input type='submit' className='butn butn-block' value='Register'/>
     </form>
     )
 }

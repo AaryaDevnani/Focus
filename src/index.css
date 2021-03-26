@@ -29,6 +29,10 @@ body {
   border-radius: 5px;
 }
 
+.alignHeader{
+  text-align: center;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -39,7 +43,8 @@ body {
 .loginBtn{
   display: inline-block;
   color: rgb(0, 0, 0);
-  border:#fff;
+  border:#f2f2f2;
+  background-color: #f2f2f2;
   padding: 10px 20px;
   margin: 5px;
   border-radius: 5px;
@@ -48,9 +53,9 @@ body {
   font-size: 40px;
   font-family: inherit;
 }
-.btn {
+.butn {
   display: inline-block;
-  background: #000;
+  background-color: #000;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -61,26 +66,24 @@ body {
   font-size: 15px;
   font-family: inherit;
 }
-.loginBtn:focus {
-  color: rgb(0, 63, 49);
-  outline: none;
-}
+
+
 .loginBtn:hover {
   color: rgb(0, 63, 49);
 }
 
-.btn:focus {
+.butn:focus {
   outline: none;
 }
-.btn:hover {
+.butn:hover {
   color: rgb(0, 235, 223);
 }
 
-.btn:active {
+.butn:active {
   transform: scale(0.98);
 }
 
-.btn-block {
+.butn-block {
   display: block;
   width: 100%;
 }
@@ -160,7 +163,12 @@ footer {
   text-align: left;
 }
 .shiftCarousel{
-  margin-left: 180px;
-  margin-right: 180px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
+.shiftImage{
+  height: 500px;
+  width: 100%;
+}
+
 

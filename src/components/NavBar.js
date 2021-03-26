@@ -10,15 +10,15 @@ function NavBar() {
             <nav>
                 <div className='logo'><b>Focus</b></div>
                 <ul>
-                    <NavLink to='/' >Home</NavLink>
+                    <NavLink to='/' className='hoverLine' >Home</NavLink>
                     {auth.loggedIn 
-                        ? <NavLink to='/logout' >Logout</NavLink>
+                        ? <NavLink to='/logout' className='hoverLine' >Logout</NavLink>
                         : <React.Fragment>
-                            <NavLink to='/login' >Login</NavLink>
-                            <NavLink to='/register' >Register</NavLink>
+                            <NavLink to='/login' className='hoverLine' >Login</NavLink>
+                            <NavLink to='/register' className='hoverLine' >Register</NavLink>
                           </React.Fragment> 
                     }
-                    <NavLink to='/forums' >Forums</NavLink>
+                    <NavLink to='/forums' className='hoverLine' >Forums</NavLink>
                 </ul>
             </nav>
         </div>
