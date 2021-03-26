@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import { BrowserRouter as Router,  Switch,  Route } from "react-router-dom";
 import './App.css';
-import Home from './Components/Home'
-import LoginRegister from './Components/LoginRegister'
-import NavBar from './Components/NavBar'
+import Home from './components/Home'
+import LoginRegister from './components/LoginRegister'
+import NavBar from './components/NavBar'
 
 function App() {
   return (
