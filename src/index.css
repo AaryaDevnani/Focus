@@ -29,6 +29,10 @@ body {
   border-radius: 5px;
 }
 
+.alignHeader{
+  text-align: center;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -160,7 +164,12 @@ footer {
   text-align: left;
 }
 .shiftCarousel{
-  margin-left: 180px;
-  margin-right: 180px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
+.shiftImage{
+  height: 500px;
+  width: 100%;
+}
+
 

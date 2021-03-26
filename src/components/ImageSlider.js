@@ -11,7 +11,8 @@ const ImageSlider = () => {
         <div>
             <Carousel className='shiftCarousel'>
                 <Carousel.Item>
-                    <img  height='500px' width='1000px'
+                    <img className='shiftImage'  
+                    // height='500px' width='1000px'
                     src={img1}
                     alt="First slide"
                     />
@@ -21,8 +22,8 @@ const ImageSlider = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img
-                     height='500px' width='1000px'
+                    <img className='shiftImage'
+                    //  height='500px' width='1000px'
                     src={img2}
                     alt="Second slide"
                     />
@@ -33,8 +34,8 @@ const ImageSlider = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img
-                      height='500px' width='1000px'
+                    <img className='shiftImage'
+                    //   height='500px' width='1000px'
                     src={img3}
                     alt="Third slide"
                     />
