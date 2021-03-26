@@ -30,9 +30,7 @@ chrome.tabs.onActivated.addListener(tab => {
             //console.log("this")
             //alert("scam mat kar nahi toh mummy ko bolega")
         }
-        
-        
     }
 )
 });
-console.log("test")
+
