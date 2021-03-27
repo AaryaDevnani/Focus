@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useDispatch } from 'react-redux'
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation , NavLink} from 'react-router-dom';
 import { loginUserAction } from "../actions/index";
 
 const Login = () => {
@@ -52,9 +52,9 @@ const Login = () => {
     
     <form className='add-form' onSubmit={handleOnSubmit} >
         <div className='center'>
-            <button className='loginBtn' ><a href='./login' className='loginBtn'>Login</a></button>
+        <NavLink to='/login' className='hoverLine'  style={navLinkStyleT}  >Login</NavLink>
             <span><b>or</b></span>
-            <button className='loginBtn' onClick=''><a href='./register' className='loginBtn'>Register</a></button>
+            <NavLink to='/register' className='hoverLine'  style={navLinkStyle}  >Register</NavLink>
         </div>
         <div className='loginContainer'>
         <div className='form-contro '>
@@ -82,6 +82,20 @@ const Login = () => {
         </div>
     </form>
     )
+}
+const navLinkStyle={
+    color: 'black',
+    textDecoration: 'none',
+    lineHeight:'70px',
+    fontSize: '40px',
+    padding:'8px 15px',
+  }
+const navLinkStyleT={
+    color: '#008B8B',
+    textDecoration: 'none',
+    lineHeight:'70px',
+    fontSize: '40px',
+    padding:'8px 15px',
 }
 
 export default Login
