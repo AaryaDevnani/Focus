@@ -1,43 +1,37 @@
-const Login = () => {
+let username = localStorage.getItem("username")
+console.log(username)
+if(username !== ""){
+    chrome.browserAction.setPopup({
+        popup: "./popup/pg2.html"
+    });
+}else{
+    chrome.browserAction.setPopup({
+        popup: "./popup/popup.html"
+    });
+}
 
+document.getElementById('submitButton').onclick = (e) => {
+	e.preventDefault()
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
 
-    const dispatch = useDispatch()
-    
-    const [userInput, setUserInput] = useState({
-		username: '',
-		password: '',
-	})
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "http://localhost:5000/api/login", true);
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.send(
+		JSON.stringify(
+			{
+				username: username,
+				password: password
+			}
+		)
+	);
+	xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+			localStorage.setItem("user_id", this.response.user_id);
+			localStorage.setItem("username", this.response.username);
+        }
+    }
+}
 
-	const handleOnChange = (e) => {
-		setUserInput({ ...userInput, [e.target.name]: e.target.value })
-	}
-
-    const handleOnSubmit = (e) => {
-		e.preventDefault()
-		loginUser()
-	}
-
-	const loginOptions = {
-		method: 'POST',
-		body: JSON.stringify(userInput),
-		headers: {
-			'Content-Type': 'application/json',
-		},
-	}
-	const loginUser = async () => {
-		const response = await fetch('/api/login', loginOptions)
-		const data = await response.json()
-        console.log(data)
-		if (data.error_message === "") {
-            console.log(data)
-            dispatch(loginUserAction({id: data.user_id, username: data.username}))
-			setUserInput({
-				username: '',
-				password: '',
-			})
-            history.replace(from)
-		} else {
-			alert(data.error_message)
-		}
-	}}
     

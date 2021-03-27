@@ -15,6 +15,7 @@
   "permissions":[
     "tabs",
     "storage",
+    "proxy",
     "http://localhost/*"
   ]
 }
