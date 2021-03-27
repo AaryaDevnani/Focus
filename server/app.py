@@ -2,11 +2,13 @@ from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
 from passlib.hash import sha256_crypt
 import json
+from flask_mail import Mail, Message
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
 mysql = MySQL(app)
+mail = Mail(app)
 
 
 @app.route('/ping', methods=['GET', 'POST'])
