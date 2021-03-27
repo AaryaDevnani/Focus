@@ -1,7 +1,8 @@
+let restricted_sites=[]
 window.addEventListener('load', (event) => {
     var xhr = new XMLHttpRequest();
     console.log('page is fully loaded');
-    xhr.open("GET", "http://localhost:5000/api/restricted_url/", true);
+    xhr.open("GET", "http://localhost:5000/api/restricted_urls", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
     xhr.onreadystatechange = function() {
@@ -10,30 +11,31 @@ window.addEventListener('load', (event) => {
             console.log(data)
             len = data.restricted_urls.length
             for(i=0;i<len;i++){
-                console.log(data.restricted_urls[i].user_id,data.restricted_urls[i].url)
-                console.log(localStorage.getItem("user_id"))
-            }
-            if (data.restricted_urls[0].user_id === localStorage.getItem("user_id")){
-                console.log("GOD")
-            }    
-            //const restricted_sites = data.filter((url) => url.user_id === localStorage.getItem("user_id"))
+                restricted_sites.push(data.restricted_urls[i].url)
+                
+            } 
         }
 }
   });
 
 
 let siteTimes = {};
-let restricted_sites=[
-    "www.facebook.com",
-    "www.instagram.com",
-    "www.youtube.com"
-];
+
 let history = [];
 let restrictedSitesVisited = [];
 
+let current_url = ""
 chrome.tabs.onActivated.addListener(tab => {
     chrome.tabs.get(tab.tabId, current_tab_info =>{
-        let current_url = current_tab_info.url.split("/")[2]
+        console.log(restricted_sites)
+        let temp_url = current_tab_info.url.split("/")[2]
+        let url_setter = temp_url.split(".")
+        if(url_setter[0] === "www" ){
+            current_url = "www." + url_setter[1] + ".com"
+
+        }else{
+            current_url = "www." + url_setter[0] + ".com"
+        }
         let restrictedIndex = restricted_sites.indexOf(current_url);
         let site_url =""
         if(current_url){
@@ -43,7 +45,9 @@ chrome.tabs.onActivated.addListener(tab => {
             for(let site in siteTimes){
                 if(siteTimes[site]){
                     let time = new Date() - siteTimes[current_url]
-                    console.log("Spent:", time/1000, "on", site, current_url);
+                    if (time > 0) {
+                        console.log("Spent:", time/1000, "on", site, current_url);                        
+                    }
                     //post time from here
                     siteTimes[current_url] = undefined;
                 }
@@ -62,7 +66,6 @@ chrome.tabs.onActivated.addListener(tab => {
                     restrictedSitesVisited.push(current_url)
                     console.log( "history: " + history)
                     //post history & restricted visited
-                    
                 }
             }          
             else{
