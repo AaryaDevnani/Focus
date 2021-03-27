@@ -36,9 +36,7 @@ const Login = () => {
 	const loginUser = async () => {
 		const response = await fetch('/api/login', loginOptions)
 		const data = await response.json()
-        console.log(data)
 		if (data.error_message === "") {
-            console.log(data)
             dispatch(loginUserAction({id: data.user_id, username: data.username}))
 			setUserInput({
 				username: '',
@@ -51,7 +49,14 @@ const Login = () => {
 	}
 
     return (
-    <form className='add-form loginContainer' onSubmit={handleOnSubmit} >
+    
+    <form className='add-form' onSubmit={handleOnSubmit} >
+        <div className='center'>
+            <button className='loginBtn' ><a href='./login' className='loginBtn'>Login</a></button>
+            <span><b>or</b></span>
+            <button className='loginBtn' onClick=''><a href='./register' className='loginBtn'>Register</a></button>
+        </div>
+        <div className='loginContainer'>
         <div className='form-contro '>
             <label className='label'>Username</label>
             <input
@@ -67,12 +72,14 @@ const Login = () => {
             <input 
                 type='password' 
                 required='required' 
+                placeholder='Enter password'
                 name="password"
                 value={userInput.password}
                 onChange={handleOnChange}
             /> 
         </div>
         <input type='submit' className='butn butn-block' value='Login'/>
+        </div>
     </form>
     )
 }

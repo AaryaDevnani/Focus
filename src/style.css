@@ -96,7 +96,7 @@ nav ul ul ul li{
   top: -60px;
   left: 150px;
 }
-.show,.icon,.check{
+.show,.fa_icon,.checkBox{
   display: none;
 }
 .fa-plus{
@@ -133,7 +133,7 @@ nav ul ul ul li{
   .show:hover{
     color: cyan;
   }
-  .icon{
+  .fa_icon{
     display: block;
     color: white;
     position: absolute;

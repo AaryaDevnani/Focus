@@ -22,6 +22,7 @@ body {
 .loginContainer {
   max-width: 600px;
   margin: 30px auto;
+  margin-top: 5px;
   overflow: auto;
   min-height: 200px;
   border: 1px solid rgb(2, 56, 53);
