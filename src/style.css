@@ -1,194 +1,196 @@
+* {
+    -webkit-user-select: auto;
 
-*{
+    -moz-user-select: auto;
 
-  -webkit-user-select: auto; 
+    -ms-user-select: auto;
 
-                -moz-user-select: auto;  
-
-                -ms-user-select: auto;  
-
-                user-select: auto;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  
+    user-select: auto;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
-body{
-  background-image: url('./Images/Image6.jpg');
-  margin: 0;
+body {
+    background-image: url("./Images/Image6.jpg");
+    margin: 0;
 }
-nav{
-  background: #1b1b1b;
+nav {
+    background: #1b1b1b;
 }
-nav:after{
-  content: '';
-  clear: both;
-  display: table;
-
+nav:after {
+    content: "";
+    clear: both;
+    display: table;
 }
-nav .logo{
-
-  float: left;
-  color: white;
-  font-size: 27px;
-  font-weight: 600;
-  line-height: 70px;
-  padding-left: 60px;
+nav .logo {
+    float: left;
+    color: white;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 70px;
+    padding-left: 60px;
 }
-nav ul{
-  padding:0 ;
-  float: right;
-  margin-right: 40px;
-  list-style: none;
-  position: relative;
+nav ul {
+    padding: 0;
+    float: right;
+    margin-right: 40px;
+    list-style: none;
+    position: relative;
 }
-nav ul li{
-  padding:0 ;
-  display: inline-block;
-  background: #1b1b1b;
-  margin: 0 5px;
+nav ul li {
+    padding: 0;
+    display: inline-block;
+    background: #1b1b1b;
+    margin: 0 5px;
 }
-nav ul li a{
-  padding:0;
-  color: white;
-  line-height: 70px;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 8px 15px;
+nav ul li a {
+    padding: 0;
+    color: white;
+    line-height: 70px;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
 }
-nav ul li a:hover{
-  color: cyan;
-  text-decoration: none;
-  border-bottom: 2px solid cyan;
+nav ul li a:hover {
+    color: cyan;
+    text-decoration: none;
+    border-bottom: 2px solid cyan;
 }
-nav ul ul li a:hover{
-  box-shadow: none;
+nav ul ul li a:hover {
+    box-shadow: none;
 }
-nav ul ul{
-  position: absolute;
-  top: 90px;
-  border-top: 3px solid cyan;
-  opacity: 0;
-  visibility: hidden;
-  transition: top .3s;
+nav ul ul {
+    position: absolute;
+    top: 90px;
+    border-top: 3px solid cyan;
+    opacity: 0;
+    visibility: hidden;
+    transition: top 0.3s;
 }
-nav ul ul ul{
-  border-top: none;
+nav ul ul ul {
+    border-top: none;
 }
-nav ul li:hover > ul{
-  top: 70px;
-  opacity: 1;
-  visibility: visible;
+nav ul li:hover > ul {
+    top: 70px;
+    opacity: 1;
+    position: absolute;
+    visibility: visible;
+    z-index: +1000000;
 }
-nav ul ul li{
-  position: relative;
-  margin: 0px;
-  width: 220px;
-  float: none;
-  display: list-item;
-  border-bottom: 1px solid rgba(0,0,0,0.3);
+nav ul ul li {
+    position: relative;
+    margin: 0px;
+    width: 220px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
-nav ul ul li a{
-  line-height: 50px;
+nav ul ul li a {
+    line-height: 50px;
 }
-nav ul ul ul li{
-  position: relative;
-  top: -60px;
-  left: 150px;
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 150px;
 }
-.show,.fa_icon,.checkBox{
-  display: none;
+.show,
+.fa_icon,
+.checkBox {
+    display: none;
 }
-.fa-plus{
-  font-size: 15px;
-  margin-left: 40px;
+.fa-plus {
+    font-size: 15px;
+    margin-left: 40px;
 }
 @media all and (max-width: 968px) {
-  nav ul{
-    margin-right: 0px;
-    float: left;
-  }
-  nav .logo{
-    padding-left: 30px;
-    width: 100%;
-  }
-  .show + a, ul{
-    display: none;
-  }
-  nav ul li,nav ul ul li{
-    display: block;
-    width: 100%;
-  }
-  nav ul li a:hover{
-    box-shadow: none;
-  }
-  .show{
-    display: block;
-    color: white;
-    font-size: 18px;
-    padding: 0 20px;
-    line-height: 70px;
-    cursor: pointer;
-  }
-  .show:hover{
-    color: cyan;
-  }
-  .fa_icon{
-    display: block;
-    color: white;
+    nav ul {
+        margin-right: 0px;
+        float: left;
+    }
+    nav .logo {
+        padding-left: 30px;
+        width: 100%;
+    }
+    .show + a,
+    ul {
+        display: none;
+    }
+    nav ul li,
+    nav ul ul li {
+        display: block;
+        width: 100%;
+    }
+    nav ul li a:hover {
+        box-shadow: none;
+    }
+    .show {
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 70px;
+        cursor: pointer;
+    }
+    .show:hover {
+        color: cyan;
+    }
+    .fa_icon {
+        display: block;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 40px;
+        line-height: 70px;
+        cursor: pointer;
+        font-size: 25px;
+    }
+    nav ul ul {
+        top: 70px;
+        border-top: 0px;
+        float: none;
+        position: static;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+    }
+    nav ul ul a {
+        padding-left: 40px;
+    }
+    nav ul ul ul a {
+        padding-left: 80px;
+    }
+    nav ul ul ul li {
+        position: static;
+    }
+    [id^="btn"]:checked + ul {
+        display: block;
+    }
+    nav ul ul li {
+        border-bottom: 0px;
+    }
+    span.cancel:before {
+        content: "\f00d";
+    }
+}
+.content {
+    z-index: -1;
     position: absolute;
-    top: 0;
-    right: 40px;
-    line-height: 70px;
-    cursor: pointer;
-    font-size: 25px;
-  }
-  nav ul ul{
-    top: 70px;
-    border-top: 0px;
-    float: none;
-    position: static;
-    display: none;
-    opacity: 1;
-    visibility: visible;
-  }
-  nav ul ul a{
-    padding-left: 40px;
-  }
-  nav ul ul ul a{
-    padding-left: 80px;
-  }
-  nav ul ul ul li{
-    position: static;
-  }
-  [id^=btn]:checked + ul{
-    display: block;
-  }
-  nav ul ul li{
-    border-bottom: 0px;
-  }
-  span.cancel:before{
-    content: '\f00d';
-  }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
-.content{
-  z-index: -1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  text-align: center;
+header {
+    font-size: 35px;
+    font-weight: 600;
+    padding: 10px 0;
 }
-header{
-  font-size: 35px;
-  font-weight: 600;
-  padding: 10px 0;
-}
-p{
-  font-size: 30px;
-  font-weight: 500;
+p {
+    font-size: 30px;
+    font-weight: 500;
 }
 
- th, td { 
- padding: 5px; 
- background-color:none; 
- } 
+th,
+td {
+    padding: 5px;
+    background-color: none;
+}

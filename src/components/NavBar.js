@@ -22,7 +22,14 @@ function NavBar() {
                         <React.Fragment>
                             <li><NavLink to='/logout' className='hoverLine' style={navLinkStyle}  >Logout</NavLink></li>
                             <li> <NavLink to='/dashboard' className='hoverLine' style={navLinkStyle} >Dashboard</NavLink></li>
-                            <li> <NavLink to='/forums' className='hoverLine' style={navLinkStyle} >Forums</NavLink></li>
+                            <li> <label className='show'>Forums +</label>
+                            <NavLink to='/forums' className='hoverLine' style={navLinkStyle} >Forums</NavLink> 
+                            <ul>
+                                <li><NavLink to='/forum/general' className='hoverLine' style={navLinkStyle} >General</NavLink></li>
+                                <li><NavLink to='/forum/browsing_history' className='hoverLine' style={navLinkStyle} >Browsing History</NavLink></li>
+                                <li><NavLink to='/forum/social_media' className='hoverLine' style={navLinkStyle} >Social Media</NavLink></li>
+                            </ul>
+                            </li>
                             <li><NavLink to='/restricted' className='hoverLine' style={navLinkStyle} >Restricted </NavLink></li>
                         </React.Fragment>
                         : 
