@@ -96,7 +96,7 @@ function AddRestricted() {
     return (
         <div>
             <form className='add-form addRestricted' onSubmit={handleOnSubmit}>
-                <h3 className='center'>Add URL to Restricted </h3>
+                <h3 className='center'>Add URL to be Restricted </h3>
                 <InputGroup className="mb-3" >
                     <FormControl 
                     placeholder="Enter URL to be restricted"

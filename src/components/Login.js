@@ -49,7 +49,6 @@ const Login = () => {
 	}
 
     return (
-    
     <form className='add-form' onSubmit={handleOnSubmit} >
         <div className='center'>
         <NavLink to='/login' className='hoverLine'  style={navLinkStyleT}  >Login</NavLink>
