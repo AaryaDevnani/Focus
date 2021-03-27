@@ -6,7 +6,7 @@
   "name": "Focus",
   "version": "1.0",
   "background": {
-    "scripts":["./background/background2.js"]
+    "scripts":["./background/background.js"]
   },
   "options_page": "./popup/options.html",
   "browser_action": {
