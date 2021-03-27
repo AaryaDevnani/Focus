@@ -18,15 +18,19 @@ function NavBar() {
                 <ul>
                    <li> <NavLink to='/' className='hoverLine' style={navLinkStyle} onMouseEnter={navLinkHover} >Home</NavLink></li>
                     {auth.loggedIn 
-                        ?<li><NavLink to='/logout' className='hoverLine' style={navLinkStyle}  >Logout</NavLink></li>
-                        : <React.Fragment>
-                           <li> <NavLink to='/login' className='hoverLine' style={navLinkStyle} >Login</NavLink></li>
-                           <li> <NavLink to='/register' className='hoverLine' style={navLinkStyle} >Register</NavLink></li>
-                          </React.Fragment> 
+                        ? 
+                        <React.Fragment>
+                            <li><NavLink to='/logout' className='hoverLine' style={navLinkStyle}  >Logout</NavLink></li>
+                            <li> <NavLink to='/dashboard' className='hoverLine' style={navLinkStyle} >Dashboard</NavLink></li>
+                            <li> <NavLink to='/forums' className='hoverLine' style={navLinkStyle} >Forums</NavLink></li>
+                            <li><NavLink to='/restricted' className='hoverLine' style={navLinkStyle} >Restricted </NavLink></li>
+                        </React.Fragment>
+                        : 
+                        <React.Fragment>
+                            <li> <NavLink to='/login' className='hoverLine' style={navLinkStyle} >Login</NavLink></li>
+                            <li> <NavLink to='/register' className='hoverLine' style={navLinkStyle} >Register</NavLink></li>
+                        </React.Fragment> 
                     }
-                     <li> <NavLink to='/dashboard' className='hoverLine' style={navLinkStyle} >Dashboard</NavLink></li>
-                   <li> <NavLink to='/forums' className='hoverLine' style={navLinkStyle} >Forums</NavLink></li>
-                   <li><NavLink to='/restricted' className='hoverLine' style={navLinkStyle} >Restricted </NavLink></li>
                 </ul>
             </nav>
         </div>
