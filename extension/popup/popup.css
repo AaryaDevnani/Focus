@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  animation:reverse;
+}
+input{
+border: 1px solid white;
+color: white
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  
+  padding: 15px;
+  
+}
+.loginContainer {
+  max-width: 600px;
+ 
+  overflow: auto;
+  min-height: 200px;
+  padding: 15px;
+  padding-top: 0; 
+  padding-bottom: 5px; 
+}
+
+.alignHeader{
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.loginBtn{
+  display: inline-block;
+  color: white;
+  border:black;
+  background-color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 40px;
+  font-family: inherit;
+}
+.butn {
+  display: inline-block;
+  background-color:white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.heading{
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+.loginBtn:hover {
+  color: rgb(0, 63, 49);
+  background-color: black;
+}
+
+.butn:focus {
+  outline: none;
+}
+.butn:hover {
+  color: rgb(0, 235, 223);
+  background-color: rgb(46, 45, 45);
+}
+
+.butn:active {
+  transform: scale(0.98);
+}
+
+.butn-block {
+  display: block;
+  width: 100%;
+}
+.center{
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
+}
+.cancel{
+  color: white;
+  cursor: pointer;
+}
+
+.cancel:hover{
+  color:rgb(155, 5, 5); 
+}
+
+.task {
+  background: black;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.task.reminder {
+  border-left: 5px solid green;
+}
+
+.task h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-form {
+  margin-bottom: 40px;
+}
+
+.form-contro {
+  margin: 20px 0;
+}
+
+.form-contro label {
+  display: block;
+}
+
+.form-contro input {
+  width: auto;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+}
+
+.form-contro-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-contro-check label {
+  flex: 1;
+}
+
+.form-contro-check input {
+  flex: 2;
+  height: 20px;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+.label{
+  font-size: 17px;
+  color: white;
+  text-align: left;
+}
+
+
+

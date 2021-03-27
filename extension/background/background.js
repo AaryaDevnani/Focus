@@ -26,11 +26,14 @@ chrome.tabs.onActivated.addListener(tab => {
             history.push(current_url)
             console.log(history)
             console.log(restrictedSitesVisited)
+            //fetch command
         }
         else{
             history.push(current_url)
             console.log(history)
+            //fetch command
         }
     }
 )
 });
+

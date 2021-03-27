@@ -1,0 +1,23 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');*/
+
+
+
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+  overflow: auto;
+  padding: 15px;
+  
+}
+.blackbg{
+    background-color: black;
+    width: 220px;
+}
+.whiteText{
+    color: white;
+}
+
+
+
+
+
