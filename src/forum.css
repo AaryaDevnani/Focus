@@ -6,9 +6,19 @@ body {
   font-family: "Open Sans", sans-serif;
   margin-top: 20px;
 }
+.containerForum {
+  max-width: 1000px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 500px;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 15px;
+  border-radius: 5px;
+}
 
 .bg-white {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0) !important;
 }
 
 .friend-list {
@@ -75,6 +85,7 @@ small,
 
 .chat-message {
   padding: 60px 20px 115px;
+  border-radius: 10px;
 }
 
 .chat {

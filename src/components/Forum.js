@@ -12,9 +12,9 @@ function Forum() {
     let { from } = location.state || { from: { pathname: "/login" } };
 
     const auth = useSelector(state => state.auth)
-    if (!auth.loggedIn) {
-        history.replace(from)
-    }
+    // if (!auth.loggedIn) {
+    //     history.replace(from)
+    // }
     
     const [messages, setMessages] = useState([])
 
@@ -77,7 +77,7 @@ function Forum() {
     
     return (
         <div>
-            <div className="container bootstrap snippets bootdey">
+            <div className="containerForum bootstrap snippets bootdey">
                 <div className="row">
                     <div className="col-md-12 bg-white ">
                         <div className="chat-message">
