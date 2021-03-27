@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -30,7 +30,7 @@ body {
   border-radius: 5px;
 }
 
-.alignHeader{
+.alignHeader {
   text-align: center;
 }
 
@@ -41,10 +41,10 @@ body {
   margin-bottom: 20px;
 }
 
-.loginBtn{
+.loginBtn {
   display: inline-block;
   color: rgb(0, 0, 0);
-  border:#f2f2f2;
+  border: #f2f2f2;
   background-color: #f2f2f2;
   padding: 10px 20px;
   margin: 5px;
@@ -68,7 +68,6 @@ body {
   font-family: inherit;
 }
 
-
 .loginBtn:hover {
   color: rgb(0, 63, 49);
 }
@@ -88,19 +87,19 @@ body {
   display: block;
   width: 100%;
 }
-.center{
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #000;
 }
-.cancel{
+.cancel {
   color: #000;
   cursor: pointer;
 }
 
-.cancel:hover{
-  color:rgb(155, 5, 5); 
+.cancel:hover {
+  color: rgb(155, 5, 5);
 }
 
 .task {
@@ -124,10 +123,10 @@ body {
   margin-bottom: 40px;
   margin-top: 20px;
   padding-bottom: 10px;
-  margin-left:27.5%;
+  margin-left: 27.5%;
   width: 45%;
   border-radius: 10px;
-  background-color: #f2f2f2 ;
+  background-color: #f2f2f2;
 }
 
 .form-contro {
@@ -165,54 +164,54 @@ footer {
   margin-top: 30px;
   text-align: center;
 }
-.label{
+.label {
   font-size: 17px;
   color: #000;
   text-align: left;
 }
-.dashboardC{
+.dashboardC {
   margin-top: 30px;
   margin-left: 7.5%;
   max-width: 85%;
 }
-.tableHead{
+.tableHead {
   font-size: 20px;
   text-align: center;
-  background-color:#1b1b1b;
+  background-color: #1b1b1b;
 }
-.tableRow{
+.tableRow {
   font-size: 16px;
   background-color: grey;
   text-align: center;
 }
 
-.shiftCarousel{
-  height:100%;
-  width:100%;
+.shiftCarousel {
+  height: 100%;
+  width: 100%;
   margin-left: 0%;
   margin-right: 0%;
   margin-top: -10px;
   margin-bottom: -10px;
 }
-.shiftImage{
-  height: 635px;;
+.shiftImage {
+  height: 635px;
   width: 100%;
   padding-top: 0px;
   margin-top: 0px;
 }
-.deleteBtn{
+.deleteBtn {
   background-color: rgba(0, 0, 0, 0);
   color: rgb(204, 17, 17);
   border: none;
   margin: none;
- 
 }
-.addRestricted{
+.addRestricted {
+  background-color: rgba(0, 0, 0, 0);
   margin-top: 20px;
   width: 50%;
   margin-left: 25%;
 }
-.submitBtn{
+.submitBtn {
   font-size: 15px;
   width: 70px;
   height: 38px;
@@ -220,10 +219,10 @@ footer {
   background-color: #0b0b0b;
   color: #ffffff;
 }
-.submitBtn:hover{
-  color: #ffffff ;
+.submitBtn:hover {
+  color: #ffffff;
 }
-.submitBtn2{
+.submitBtn2 {
   font-size: 15px;
   width: 70px;
   height: 38px;
@@ -232,7 +231,93 @@ footer {
   background-color: rgb(114, 7, 7);
   color: #ffffff;
 }
-.submitBtn2:hover{
+.submitBtn2:hover {
   border: solid 1px black;
+}
 
+.dropbtn {
+  background-color: rgb(85, 85, 219);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  transition: all 0.3s;
+  padding-left: 23x;
+  padding-right: 23px;
+  /* height: 100%; */
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: rgb(252, 188, 49);
+}
+
+.navElements {
+  float: left;
+}
+.dropbtn {
+  padding-left: 23x;
+  padding-right: 23px;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+}
+button.dropbtn {
+  width: 200px !important;
+  height: 40spx !important;
+}
+
+input.form-control.border.no-shadow.no-rounded {
+  top: 8px;
+}
+button.btn.btn-success.no-rounded {
+  margin-top: 2px !important;
+  height: 100%;
+  border-radius: 0px;
+}
+input.form-control.border.no-shadow.no-rounded {
+  top: 2px;
+  font-size: 30px;
 }
