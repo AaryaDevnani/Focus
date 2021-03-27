@@ -4,6 +4,7 @@ if(username !== ""){
     chrome.browserAction.setPopup({
         popup: "./popup/pg2.html"
     });
+    
 }else{
     chrome.browserAction.setPopup({
         popup: "./popup/popup.html"

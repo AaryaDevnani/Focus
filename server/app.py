@@ -116,5 +116,40 @@ def forumLabel(label):
         return jsonify({"error_message": ""})
 
 
+@app.route('/api/restricted_urls', methods=['GET'])
+def restricted_urls():
+    cur = mysql.connection.cursor()
+    if request.method == 'GET':
+        result = cur.execute('SELECT * FROM restricted_urls')
+        if result > 0:
+            restricted_urls = cur.fetchall()
+            return jsonify({"restricted_urls": restricted_urls, "error_message": ""})
+        else:
+            return jsonify({"error_message": "No restricted urls added yet"})
+
+
+@app.route('/api/restricted_url/<string:id>', methods=['GET', 'POST', 'DELETE'])
+def restricted_url(id):
+    cur = mysql.connection.cursor()
+
+    if request.method == 'POST':
+        obj = json.loads(request.data)
+        url = obj['url']
+        user_id = obj['user_id']
+        result = cur.execute(
+            'INSERT INTO restricted_urls(url, updated_timestamp, user_id) VALUES (%s, NOW(), %s)', (url, user_id))
+
+        mysql.connection.commit()
+        cur.close()
+
+        return jsonify({"error_message": ""})
+
+    if request.method == 'DELETE':
+        cur.execute('DELETE FROM restricted_urls WHERE id = %s', [id])
+        mysql.connection.commit()
+        cur.close()
+        return jsonify({"error_message": ""})
+
+
 if __name__ == '__main__':
     app.run(debug=True)

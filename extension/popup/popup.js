@@ -1,6 +1,7 @@
 let username = localStorage.getItem("username")
 console.log(username)
 if(username !== ""){
+	window.close()
     chrome.browserAction.setPopup({
         popup: "./popup/pg2.html"
     });
@@ -30,6 +31,7 @@ document.getElementById('submitButton').onclick = (e) => {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
 			localStorage.setItem("user_id", this.response.user_id);
 			localStorage.setItem("username", this.response.username);
+			
         }
     }
 }
