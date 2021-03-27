@@ -7,7 +7,7 @@ function AddRestricted() {
         <div>
 
             <form className='add-form' className="addRestricted">
-                <h3 className='center'>Add URL to Restricted </h3>
+                <h2 className='center'><b>Add URL to be Restricted </b></h2>
             <InputGroup className="mb-3" >
                 <FormControl 
                 placeholder="Recipient's username"
