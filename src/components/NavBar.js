@@ -10,19 +10,26 @@ function NavBar() {
             <nav>
                 <div className='logo'><b>Focus</b></div>
                 <ul>
-                    <NavLink to='/' className='hoverLine' >Home</NavLink>
+                    <NavLink to='/' className='hoverLine' style={navLinkStyle} >Home</NavLink>
                     {auth.loggedIn 
-                        ? <NavLink to='/logout' className='hoverLine' >Logout</NavLink>
+                        ? <NavLink to='/logout' className='hoverLine' style={navLinkStyle} >Logout</NavLink>
                         : <React.Fragment>
-                            <NavLink to='/login' className='hoverLine' >Login</NavLink>
-                            <NavLink to='/register' className='hoverLine' >Register</NavLink>
+                            <NavLink to='/login' className='hoverLine' style={navLinkStyle} >Login</NavLink>
+                            <NavLink to='/register' className='hoverLine' style={navLinkStyle} >Register</NavLink>
                           </React.Fragment> 
                     }
-                    <NavLink to='/forums' className='hoverLine' >Forums</NavLink>
+                    <NavLink to='/forums' className='hoverLine' style={navLinkStyle} >Forums</NavLink>
                 </ul>
             </nav>
         </div>
     )
+}
+const navLinkStyle={
+  color: 'white',
+  textDecoration: 'none',
+  lineHeight:'70px',
+  fontSize: '18px',
+  padding:'8px 15px',
 }
 
 export default NavBar

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Register = () => {
     return (
-        <form className='add-form' >
+        <form className='add-form loginContainer' >
         <div className='form-contro'>
             <label className='label'>Parent/Guardian Username</label>
             <input
