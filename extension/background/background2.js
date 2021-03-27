@@ -9,8 +9,9 @@ let restrictedSitesVisited = [];
 
 chrome.tabs.onActivated.addListener(tab => {
     chrome.tabs.get(tab.tabId, current_tab_info =>{
-        current_url = current_tab_info.url.split("/")[2]
+        let current_url = current_tab_info.url.split("/")[2]
         let restrictedIndex = restricted_sites.indexOf(current_url);
+        let site_url =""
         if(current_url){
             site_url = current_url
             if (current_url !== 'newtab') {
@@ -34,11 +35,12 @@ chrome.tabs.onActivated.addListener(tab => {
                     history.push(current_url)
                     restrictedSitesVisited.push(current_url)
                     console.log( "history: " + history)
-                    console.log("restricted history: " +restrictedSitesVisited)
+                    
                 }
             }else{
                 history.push(current_url)
                 console.log( "history: " + history)
+                console.log("restricted history: " +restrictedSitesVisited)
             }
         }
     }

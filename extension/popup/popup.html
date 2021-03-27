@@ -9,26 +9,30 @@
 </head>
 <body>
 <h1 class = "heading">Log In</h1>    
-<form class='add-form loginContainer' >
+<form class='add-form loginContainer' id="myForm" >
     <div class='form-contro '>
         <label class='label'>Username</label>
         <input
          type='text' required='required'  
          name="username"
+         id="username"
          placeholder='Enter Username' 
-        /> 
-    </div>
-    <div class='form-contro '>
-        <label class='label'>Password</label>
-        <input 
+         value="username"
+         /> 
+        </div>
+        <div class='form-contro '>
+            <label class='label'>Password</label>
+            <input 
             type='password' 
             required='required' 
+            id="password"
             name="password"
+            value="password"
             placeholder='Enter Password'
-        /> 
-    </div>
-    <input type='submit' class='butn butn-block' value='Login'/>
+            /> 
+        </div>
+        <input type='submit' id="submitButton" class='butn butn-block' value='Login' />
 </form>
-</body>
 <script src="popup.js"></script>
+</body>
 </html>
