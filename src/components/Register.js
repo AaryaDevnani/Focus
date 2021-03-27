@@ -50,7 +50,7 @@ const Register = () => {
 
 
     return (
-        <form className='add-formr' onSubmit={handleOnSubmit}  >
+        <form className='add-form' onSubmit={handleOnSubmit}  >
         <div className='center'>
         <NavLink to='/login' className='hoverLine'  style={navLinkStyle}  >Login</NavLink>
             <span><b>or</b></span>
@@ -62,6 +62,7 @@ const Register = () => {
             <input
              type='text' required='required' 
              placeholder='Enter username' 
+             pattern='[A-Za-z0-9_]{0,100}'
              name='username'     
              value={userInput.name}
              onChange={handleOnChange}

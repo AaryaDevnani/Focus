@@ -132,6 +132,15 @@ def restricted_urls():
 def restricted_url(id):
     cur = mysql.connection.cursor()
 
+    if request.method == 'GET':
+        result = cur.execute(
+            'SELECT * FROM restricted_urls where user_id = %s', [id])
+        if result > 0:
+            restricted_urls = cur.fetchall()
+            return jsonify({"restricted_urls": restricted_urls, "error_message": ""})
+        else:
+            return jsonify({"error_message": "No restricted urls added yet"})
+
     if request.method == 'POST':
         obj = json.loads(request.data)
         url = obj['url']

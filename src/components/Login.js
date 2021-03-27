@@ -8,7 +8,7 @@ const Login = () => {
     let history = useHistory()
     let location = useLocation()
 
-    let { from } = location.state || { from: { pathname: "/forums" } };
+    let { from } = location.state || { from: { pathname: "/dashboard" } };
     
     const dispatch = useDispatch()
     
@@ -49,7 +49,6 @@ const Login = () => {
 	}
 
     return (
-    
     <form className='add-form' onSubmit={handleOnSubmit} >
         <div className='center'>
         <NavLink to='/login' className='hoverLine'  style={navLinkStyleT}  >Login</NavLink>
