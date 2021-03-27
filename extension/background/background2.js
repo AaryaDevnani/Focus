@@ -1,3 +1,27 @@
+window.addEventListener('load', (event) => {
+    var xhr = new XMLHttpRequest();
+    console.log('page is fully loaded');
+    xhr.open("GET", "http://localhost:5000/api/restricted_url/", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send();
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            const data = JSON.parse(this.response)
+            console.log(data)
+            len = data.restricted_urls.length
+            for(i=0;i<len;i++){
+                console.log(data.restricted_urls[i].user_id,data.restricted_urls[i].url)
+                console.log(localStorage.getItem("user_id"))
+            }
+            if (data.restricted_urls[0].user_id === localStorage.getItem("user_id")){
+                console.log("GOD")
+            }    
+            //const restricted_sites = data.filter((url) => url.user_id === localStorage.getItem("user_id"))
+        }
+}
+  });
+
+
 let siteTimes = {};
 let restricted_sites=[
     "www.facebook.com",
