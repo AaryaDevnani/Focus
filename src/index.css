@@ -163,6 +163,22 @@ footer {
   color: #000;
   text-align: left;
 }
+.dashboardC{
+  margin-top: 30px;
+  margin-left: 7.5%;
+  max-width: 85%;
+}
+.tableHead{
+  font-size: 20px;
+  text-align: center;
+  background-color:#1b1b1b;
+}
+.tableRow{
+  font-size: 18px;
+  background-color: grey;
+  text-align: center;
+}
+
 .shiftCarousel{
   height:100%;
   width:100%;
@@ -177,5 +193,38 @@ footer {
   padding-top: 0px;
   margin-top: 0px;
 }
+.deleteBtn{
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(204, 17, 17);
+  border: none;
+ 
+}
+.addRestricted{
+  margin-top: 20px;
+  width: 50%;
+  margin-left: 25%;
+}
+.submitBtn{
+  font-size: 15px;
+  width: 70px;
+  height: 38px;
+  border: none;
+  background-color: #0b0b0b;
+  color: #ffffff;
+}
+.submitBtn:hover{
+  color: cyan;
+}
+.submitBtn2{
+  font-size: 15px;
+  width: 70px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(114, 7, 7);
+  color: #ffffff;
+}
+.submitBtn2:hover{
+  border: solid 1px black;
 
-
+}

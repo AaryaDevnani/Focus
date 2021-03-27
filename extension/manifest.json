@@ -6,7 +6,7 @@
   "name": "Focus",
   "version": "1.0",
   "background": {
-    "scripts":["./background/background.js"]
+    "scripts":["./background/background2.js"]
   },
   "options_page": "./popup/options.html",
   "browser_action": {
@@ -15,6 +15,7 @@
   "permissions":[
     "tabs",
     "storage",
+    "proxy",
     "http://localhost/*"
   ]
 }
