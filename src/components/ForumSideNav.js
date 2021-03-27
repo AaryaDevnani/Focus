@@ -1,13 +1,14 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 function ForumSideNav() {
     return (
         <div>
             <ul>
-                <li><a href="/forums">All</a></li>
-                <li><a href="/forum/general">General</a></li>
-                <li><a href="/forum/browsing_history">Browsing History</a></li>
-                <li><a href="/forum/social_media">Social Media</a></li>
+                <li><Link to="/forums">All</Link></li>
+                <li><Link to="/forum/general">General</Link></li>
+                <li><Link to="/forum/browsing_history">Browsing History</Link></li>
+                <li><Link to="/forum/social_media">Social Media</Link></li>
             </ul>
         </div>
     )
