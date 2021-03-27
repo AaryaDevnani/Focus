@@ -12,9 +12,9 @@ function Forum() {
     let { from } = location.state || { from: { pathname: "/login" } };
 
     const auth = useSelector(state => state.auth)
-    // if (!auth.loggedIn) {
-    //     history.replace(from)
-    // }
+    if (!auth.loggedIn) {
+        history.replace(from)
+    }
     
     const [messages, setMessages] = useState([])
 
