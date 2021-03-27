@@ -26,6 +26,7 @@ function NavBar() {
                     }
                      <li> <NavLink to='/dashboard' className='hoverLine' style={navLinkStyle} >Dashboard</NavLink></li>
                    <li> <NavLink to='/forums' className='hoverLine' style={navLinkStyle} >Forums</NavLink></li>
+                   <li><NavLink to='/restricted' className='hoverLine' style={navLinkStyle} >Restricted </NavLink></li>
                 </ul>
             </nav>
         </div>
