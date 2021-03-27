@@ -20,6 +20,7 @@ chrome.tabs.onActivated.addListener(tab => {
                 if(siteTimes[site]){
                     let time = new Date() - siteTimes[current_url]
                     console.log("Spent:", time/1000, "on", site, current_url);
+                    //post time from here
                     siteTimes[current_url] = undefined;
                 }
             }
@@ -36,6 +37,7 @@ chrome.tabs.onActivated.addListener(tab => {
                     history.push(current_url)
                     restrictedSitesVisited.push(current_url)
                     console.log( "history: " + history)
+                    //post history & restricted visited
                     
                 }
             }          
@@ -43,6 +45,8 @@ chrome.tabs.onActivated.addListener(tab => {
                 history.push(current_url)
                 console.log( "history: " + history)
                 console.log("restricted history: " +restrictedSitesVisited)
+                //post only history
+                
             }
         }
     }
