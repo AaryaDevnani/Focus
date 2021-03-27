@@ -120,7 +120,7 @@ def forumLabel(label):
 def restricted_urls():
     cur = mysql.connection.cursor()
     if request.method == 'GET':
-        result = cur.execute('SELECT * FROM restricted_urls')
+        result = cur.execute('SELECT * FROM restricted_urls GROUP BY url')
         if result > 0:
             restricted_urls = cur.fetchall()
             return jsonify({"restricted_urls": restricted_urls, "error_message": ""})

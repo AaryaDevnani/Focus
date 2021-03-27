@@ -1,13 +1,28 @@
 import React from 'react'
 import {Table,Button} from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, useLocation } from 'react-router';
 
 function Dashboard() {
+
+    const dispatch = useDispatch()
+
+    let history = useHistory()
+    let location = useLocation()
+    
+    let { from } = location.state || { from: { pathname: "/login" } };
+
+    const auth = useSelector(state => state.auth)
+    if (!auth.loggedIn) {
+        history.replace(from)
+    }
+    
     return (
         <div>
         <Table striped bordered hover variant="dark" className='dashboardC'>
             <thead>
                 <tr className='tableHead'>
-                <th>Device Name</th>    
+                <th>Sr. No</th>    
                 <th>URL</th>
                 <th>Date</th>
                 <th>Time Spent</th>

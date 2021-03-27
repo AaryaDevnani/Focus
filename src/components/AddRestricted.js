@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
 
 function AddRestricted() {
+    let sr_no = 1
 
     const dispatch = useDispatch()
 
@@ -123,7 +124,7 @@ function AddRestricted() {
                 {restricted_urls.map((restricted_url) => (
                     <React.Fragment key={restricted_url.id}>
                         <tr className='tableRow'>
-                        <td>{restricted_url.id}</td>
+                        <td>{sr_no++}</td>
                         <td>{restricted_url.url}</td>
                         <td>
                         <form ><button type='submit' className='submitBtn2' onClick={handleDelete} id={restricted_url.id}>Delete</button></form>
