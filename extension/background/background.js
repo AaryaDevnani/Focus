@@ -1,4 +1,4 @@
-let siteTimes = {}
+
 let restricted_sites=[
     "www.facebook.com",
     "www.instagram.com",
@@ -10,16 +10,7 @@ let restrictedSitesVisited = [];
 chrome.tabs.onActivated.addListener(tab => {
     chrome.tabs.get(tab.tabId, current_tab_info =>{
         current_url = current_tab_info.url.split("/")[2]
-        let a = restricted_sites.indexOf(current_url);
-        let result = false
-        for(let site in siteTimes){
-            if(siteTimes[site]){
-                let time = new Date() - siteTimes[current_url]
-                console.log("Spent:", time/1000, "on", site);
-                siteTimes[current_url] = undefined;
-            }
-        }
-        siteTimes[current_url] = new Date();
+        let a = restricted_sites.indexOf(current_url);        
         if(current_url == "newtab" || current_url == undefined){
             
         }
@@ -34,6 +25,7 @@ chrome.tabs.onActivated.addListener(tab => {
             history.push(current_url)
             console.log(history)
             console.log(restrictedSitesVisited)
+            
             //fetch command
         }
         else{

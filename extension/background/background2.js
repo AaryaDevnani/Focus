@@ -14,7 +14,7 @@ chrome.tabs.onActivated.addListener(tab => {
         let site_url =""
         if(current_url){
             site_url = current_url
-            if (current_url !== 'newtab') {
+            if (current_url !== 'newtab') { 
             //time func
             for(let site in siteTimes){
                 if(siteTimes[site]){
@@ -26,25 +26,26 @@ chrome.tabs.onActivated.addListener(tab => {
             siteTimes[current_url] = new Date();
             
             let result = false
-            if(restrictedIndex>-1)
+            if(restrictedIndex>-1){
                 result = confirm("This is a warning, you are visiting a restricted website. Click 'OK' to go back, or else a notification will be sent to your parent/guardian")
                 if(result == true){
                     chrome.tabs.remove(tab.tabId)
-                }else{
+                }
+                else if(result == false){
                     //execute email code
                     history.push(current_url)
                     restrictedSitesVisited.push(current_url)
                     console.log( "history: " + history)
                     
                 }
-            }else{
+            }          
+            else{
                 history.push(current_url)
                 console.log( "history: " + history)
                 console.log("restricted history: " +restrictedSitesVisited)
             }
         }
     }
-      
-    
+}
 )
 });
