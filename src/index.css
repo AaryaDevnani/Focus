@@ -163,6 +163,22 @@ footer {
   color: #000;
   text-align: left;
 }
+.dashboardC{
+  margin-top: 30px;
+  margin-left: 7.5%;
+  max-width: 85%;
+}
+.tableHead{
+  font-size: 20px;
+  text-align: center;
+  background-color:#1b1b1b;
+}
+.tableRow{
+  font-size: 18px;
+  background-color: grey;
+  text-align: center;
+}
+
 .shiftCarousel{
   height:100%;
   width:100%;

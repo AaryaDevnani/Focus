@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 import Logout from "./components/Logout";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route exact path='/logout' component={Logout} />
               <Route exact path='/forums' component={Forum} />
               <Route exact path='/forum/:label' component={ForumLabel} />
+              <Route exact path='/dashboard' component={Dashboard} />
             </Switch>
         </header>
       </div>
