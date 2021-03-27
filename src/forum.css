@@ -179,7 +179,7 @@ img {
     right: 0;
   */
   padding: 15px;
-  border-top: 1px solid #eee;
+
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -196,4 +196,69 @@ a:active,
 a:focus {
   text-decoration: none;
   outline: 0;
+}
+.img {
+  display: none;
+}
+.chat-box.bg-white {
+  margin-bottom: 20px;
+}
+.body {
+  padding-top: 0;
+  font-size: 12px;
+  color: #777;
+  background: #f9f9f9;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 20px;
+}
+.chat-message {
+  padding-top: 15px;
+  background-color: black !important;
+}
+
+p {
+  font-size: 18px !important;
+  font-weight: 450;
+  font-family: "Poppins", sans-serif;
+}
+.chat-box.bg-white {
+  background-color: black !important;
+}
+
+button.dropbtn {
+  background-color: grey;
+}
+button.dropbtn:hover {
+  background-color: rgb(49, 49, 49) impo !important;
+}
+.dropdown-content a {
+  color: black;
+  width: 200px;
+  font-size: 20px;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.selectTag {
+  background-color: #87ceeb;
+  width: 200px;
+
+  text-align: center;
+  display: inline-block;
+  height: 100%;
+  font-size: 20px;
+}
+option {
+  background-color: #fff;
+  text-align: center;
+}
+.forumLabel {
+  font-size: 30px;
+  color: white;
+}
+.forumLabel2 {
+  font-size: 30px;
+  margin-left: 63%;
+  color: white;
 }

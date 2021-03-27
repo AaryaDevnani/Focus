@@ -40,132 +40,56 @@ function Forum() {
         <div>
             {/* <ForumSideNav />
             <ForumMessages messages={messages} /> */}
-            <div class="container bootstrap snippets bootdey">
-                <div class="row">
-                    <div class="col-md-12 bg-white ">
-                        <div class="chat-message">
-                            <ul class="chat">
-                                <li class="left clearfix">
-                                    <span class="chat-img pull-left">
-                                        <img src="https://bootdey.com/img/Content/user_3.jpg" alt="User Avatar" />
-                                    </span>
-                                    <div class="chat-box bg-white">
-                            <div class="input-group">
-                                <input class="form-control border no-shadow no-rounded" placeholder="Type your message here" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-success no-rounded" type="button">Send</button>
+            <div className="container bootstrap snippets bootdey">
+                <div className="row">
+                    <div className="col-md-12 bg-white ">
+                        <div className="chat-message">
+                            <label className='forumLabel'>Message  </label>
+                            <label className='forumLabel2'>Label  </label>
+                            <div className="input-group">
+                                <input className="form-control border no-shadow no-rounded" placeholder="Type your message here" />
+                                <div>        
+                                    <select name="label" id="label" className='selectTag center'>
+                                        <option className="center" value="general">General</option>
+                                        <option className="center" value="browsing_history">Browsing History</option>
+                                        <option className="center" value="social_media">Social Media</option>
+                                    </select>
+                                </div>
+                                <span className="input-group-btn">
+                                    <button className="btn btn-success no-rounded" type="button">Send</button>
                                 </span>
                             </div>
-                        </div>          
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">John Doe</strong>
-                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+                            <ul className="chat">
+                                <li className="left clearfix">
+                                    <div className="chat-body clearfix">
+                                        <div className="header">
+                                            <strong className="primary-font">John Doe</strong>
                                         </div>
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                         </p>
                                     </div>
                                 </li>
-                                <li class="right clearfix">
-                                    <span class="chat-img pull-right">
-                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="User Avatar" />
+                                <li className="right clearfix">
+                                    <span className="chat-img pull-right">
                                     </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">Sarah</strong>
-                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 13 mins ago</small>
+                                    <div className="chat-body clearfix">
+                                        <div className="header">
+                                            <strong className="primary-font">Sarah</strong>
                                         </div>
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. 
                                         </p>
                                     </div>
                                 </li>
-                                <li class="left clearfix">
-                                    <span class="chat-img pull-left">
-                                        <img src="https://bootdey.com/img/Content/user_3.jpg" alt="User Avatar" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">John Doe</strong>
-                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="right clearfix">
-                                    <span class="chat-img pull-right">
-                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="User Avatar" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">Sarah</strong>
-                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 13 mins ago</small>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. 
-                                        </p>
-                                    </div>
-                                </li>                    
-                                <li class="left clearfix">
-                                    <span class="chat-img pull-left">
-                                        <img src="https://bootdey.com/img/Content/user_3.jpg" alt="User Avatar" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">John Doe</strong>
-                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="right clearfix">
-                                    <span class="chat-img pull-right">
-                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="User Avatar" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">Sarah</strong>
-                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 13 mins ago</small>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. 
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="right clearfix">
-                                    <span class="chat-img pull-right">
-                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="User Avatar" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">Sarah</strong>
-                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 13 mins ago</small>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. 
-                                        </p>
-                                    </div>
-                                </li>                    
                             </ul>
                         </div>
-                        {/* <div class="chat-box bg-white">
-                            <div class="input-group">
-                                <input class="form-control border no-shadow no-rounded" placeholder="Type your message here" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-success no-rounded" type="button">Send</button>
-                                </span>
-                            </div>
-                        </div>             */}
                     </div>        
                 </div>
             </div>
         </div>
     )
 }
+
 
 export default Forum
