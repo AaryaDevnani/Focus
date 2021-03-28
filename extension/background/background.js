@@ -1,28 +1,41 @@
-let restricted_sites=["www.twitter.com"]
-window.addEventListener('load', (event) => {
+let user_id = 0
+let restricted_sites=[]
+
+ const getURLS = (user_id) => {
     var xhr = new XMLHttpRequest();
     console.log('page is fully loaded');
-    xhr.open("GET", "http://localhost:5000/api/restricted_urls", true);
+    xhr.open("GET", `http://localhost:5000/api/restricted_url/${user_id}`, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
     xhr.onreadystatechange = function() {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             const data = JSON.parse(this.response)
             console.log(data)
+
             len = data.restricted_urls.length
             for(i=0;i<len;i++){
                 restricted_sites.push(data.restricted_urls[i].url)
             } 
         }
-}
-  });
+    }
+};
 
 let totaltime = 0 
 let siteTimes = {};
 let sendData = {"url": "","restricted": "", }
-
 let history = [];
 let restrictedSitesVisited = {};
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        console.log("background.js got a message")
+        console.log(request);
+        let temp = JSON.parse(request)
+        user_id = temp.user_id
+        getURLS(user_id)
+        console.log(sender);
+        sendResponse("bar");
+    }
+  );
 
 let current_url = ""
 chrome.tabs.onActivated.addListener(tab => {
@@ -53,25 +66,21 @@ chrome.tabs.onActivated.addListener(tab => {
                     chrome.tabs.remove(tab.tabId)
                 }
                 else if(result == false){
-                    //execute email code
+ 
+                    console.log(user_id)
                     history.push(current_url)
                     restrictedSitesVisited[current_url] = "true" 
                     
                     console.log("restricted history: " +restrictedSitesVisited)
-                    //post history & restricted visited
                 }
             }          
             else{
                 history.push(current_url)
                 console.log( "history: " + history)
-                
-                //post only history
-                
             }
 
             for(let site in siteTimes){
                 console.log(site)
-                //site = current_url
                 if(siteTimes[site]){
                     let time = new Date() - siteTimes[site]
                     if (time > 0) {
@@ -85,7 +94,6 @@ chrome.tabs.onActivated.addListener(tab => {
                         }                
                     }
                     siteTimes[site] = undefined;
-                     //post time from here
                     let restricted = false
                     if (restrictedSitesVisited[site]) {
                         restricted = restrictedSitesVisited[site]

@@ -57,9 +57,10 @@ def login():
             user = cur.fetchone()
             user_id = user['id']
             password = user['password']
+            email = user['email']
 
             if sha256_crypt.verify(password_input, password):
-                return jsonify({"error_message": "", "user_id": user_id, "username": username})
+                return jsonify({"error_message": "", "user_id": user_id, "username": username, "email": email})
             else:
                 return jsonify({"error_message": "Password is incorrect. Please try again"})
         else:
@@ -122,7 +123,7 @@ def forumLabel(label):
 def restricted_urls():
     cur = mysql.connection.cursor()
     if request.method == 'GET':
-        result = cur.execute('SELECT DISTINCT url FROM restricted_urls')
+        result = cur.execute('SELECT * FROM restricted_urls')
         if result > 0:
             restricted_urls = cur.fetchall()
             return jsonify({"restricted_urls": restricted_urls, "error_message": ""})
