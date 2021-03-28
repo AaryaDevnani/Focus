@@ -185,6 +185,12 @@ footer {
   background-color: rgb(255, 255, 255) !important;
   text-align: center;
 }
+.tableRow:hover{
+  font-size: 16px;
+  color: #000 !important;
+  background-color: rgb(255, 255, 255) !important;
+  text-align: center;
+}
 
 .shiftCarousel {
     height: 100%;
