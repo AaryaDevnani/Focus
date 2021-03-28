@@ -321,3 +321,7 @@ input.form-control.border.no-shadow.no-rounded {
     top: 2px;
     font-size: 30px;
 }
+
+.redFont {
+    color: red;
+}
