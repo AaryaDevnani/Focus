@@ -162,5 +162,28 @@ def restricted_url(id):
         return jsonify({"error_message": ""})
 
 
+@app.route('/api/history', methods=['GET', 'POST'])
+def history():
+    cur = mysql.connection.cursor()
+    if request.method == 'GET':
+        result = cur.execute('SELECT * FROM urls')
+        if result > 0:
+            urls = cur.fetchall()
+            return jsonify({"urls": urls, "error_message": ""})
+        else:
+            return jsonify({"error_message": "No restricted urls added yet"})
+
+    if request.method == "POST":
+        obj = json.loads(request.data)
+        url = obj['url']
+        time_spent = obj['time_spent']
+        restricted= obj['restricted']
+        result = cur.execute('INSERT INTO urls(url, restricted, time_spent, updated_timestamp) VALUES (%s, %s, %s, NOW())', (url, restricted, time_spent))
+
+        mysql.connection.commit()
+        cur.close()
+
+        return jsonify({"error_message": ""})
+
 if __name__ == '__main__':
     app.run(debug=True)
