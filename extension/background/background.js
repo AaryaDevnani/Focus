@@ -12,13 +12,12 @@ window.addEventListener('load', (event) => {
             len = data.restricted_urls.length
             for(i=0;i<len;i++){
                 restricted_sites.push(data.restricted_urls[i].url)
-                
             } 
         }
 }
   });
 
-
+let totaltime = 0 
 let siteTimes = {};
 let sendData = {"url": "","restricted": "", }
 
@@ -28,26 +27,7 @@ let restrictedSitesVisited = {};
 let current_url = ""
 chrome.tabs.onActivated.addListener(tab => {
     chrome.tabs.get(tab.tabId, current_tab_info =>{
-        console.log(restricted_sites)
-//         var xhr = new XMLHttpRequest();
-//         console.log('page is fully loaded');
-//         xhr.open("GET", "http://localhost:5000/api/restricted_urls", true);
-//         xhr.setRequestHeader('Content-Type', 'application/json');
-//         xhr.send();
-//         xhr.onreadystatechange = function() {
-//         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-//             const data = JSON.parse(this.response)
-//             console.log(data)
-//             len = data.restricted_urls.length
-//             for(i=0;i<len;i++){
-//                 if (!(data.restricted_urls[i].url in restricted_sites)) {
-//                     restricted_sites.push(data.restricted_urls[i].url)
-//                 }
-//             } 
-//         }
-// }
-
-        
+        console.log(restricted_sites)        
         let temp_url = current_tab_info.url.split("/")[2]
         if(temp_url){
             let url_setter = temp_url.split(".")
@@ -66,8 +46,6 @@ chrome.tabs.onActivated.addListener(tab => {
         if(current_url){
             site_url = current_url
             if (current_url !== 'newtab') { 
-        
-         
             let result = false
             if(restrictedIndex>-1){
                 result = confirm("This is a warning, you are visiting a restricted website. Click 'OK' to go back, or else a notification will be sent to your parent/guardian")
@@ -97,7 +75,14 @@ chrome.tabs.onActivated.addListener(tab => {
                 if(siteTimes[site]){
                     let time = new Date() - siteTimes[site]
                     if (time > 0) {
-                        console.log("Spent:", time/1000, "on", site);                        
+                        console.log("Spent:", time/1000, "on", site);   
+                        totaltime = (time/1000)+totaltime    
+                        console.log("totaltime: "+ totaltime) 
+                        if(totaltime > 3600){
+                            alert("It has been one hour since you've been borwsing the web. Press OK to continue.")
+                            totaltime=0
+                            break;
+                        }                
                     }
                     siteTimes[site] = undefined;
                      //post time from here
