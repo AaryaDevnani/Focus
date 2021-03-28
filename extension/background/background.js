@@ -1,9 +1,9 @@
 let user_id = 0
+let email = ""
 let restricted_sites=[]
 
  const getURLS = (user_id) => {
     var xhr = new XMLHttpRequest();
-    console.log('page is fully loaded');
     xhr.open("GET", `http://localhost:5000/api/restricted_url/${user_id}`, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
@@ -20,6 +20,24 @@ let restricted_sites=[]
     }
 };
 
+const sendMail = (url,timestamp,email) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", `http://localhost:5000/api/sendemail`, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(
+        JSON.stringify(
+            {
+                url: url,
+                timestamp: timestamp,
+                email:email
+            }
+        )
+    );
+    
+};
+
+
+
 let totaltime = 0 
 let siteTimes = {};
 let sendData = {"url": "","restricted": "", }
@@ -31,8 +49,10 @@ chrome.runtime.onMessage.addListener(
         console.log(request);
         let temp = JSON.parse(request)
         user_id = temp.user_id
+        email = temp.email
+        console.log(user_id)
+        console.log(email)
         getURLS(user_id)
-        console.log(sender);
         sendResponse("bar");
     }
   );
@@ -67,9 +87,13 @@ chrome.tabs.onActivated.addListener(tab => {
                 }
                 else if(result == false){
  
+                    //email code
+                    
                     console.log(user_id)
                     history.push(current_url)
                     restrictedSitesVisited[current_url] = "true" 
+                    let timestamp = new Date()
+                    sendMail(current_url,timestamp,email)
                     
                     console.log("restricted history: " +restrictedSitesVisited)
                 }
