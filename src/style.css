@@ -14,7 +14,7 @@ body {
     margin: 0;
 }
 nav {
-    background: #1b1b1b;
+    background: #000;
 }
 nav:after {
     content: "";
@@ -39,7 +39,7 @@ nav ul {
 nav ul li {
     padding: 0;
     display: inline-block;
-    background: #1b1b1b;
+    background: #000;
     margin: 0 5px;
 }
 nav ul li a {
