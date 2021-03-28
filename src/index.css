@@ -175,21 +175,21 @@ footer {
     max-width: 85%;
 }
 .tableHead {
-  font-size: 20px;
-  text-align: center;
-  background-color: #0c0c0c !important;
+    font-size: 20px;
+    text-align: center;
+    background-color: #0c0c0c !important;
 }
 .tableRow {
-  font-size: 16px;
-  color: #000;
-  background-color: rgb(255, 255, 255) !important;
-  text-align: center;
+    font-size: 16px;
+    color: #000;
+    background-color: rgb(255, 255, 255) !important;
+    text-align: center;
 }
-.tableRow:hover{
-  font-size: 16px;
-  color: #000 !important;
-  background-color: rgb(255, 255, 255) !important;
-  text-align: center;
+.tableRow:hover {
+    font-size: 16px;
+    color: #000 !important;
+    background-color: rgb(255, 255, 255) !important;
+    text-align: center;
 }
 
 .shiftCarousel {
@@ -331,4 +331,20 @@ input.form-control.border.no-shadow.no-rounded {
 
 .redFont {
     color: red;
+}
+
+.howTo-img {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 20px !important;
+    box-shadow: 6px 6px 10px 12px #2e2929;
+}
+
+.rem-bg {
+    background-color: #fff;
+    /* background-image: linear-gradient(0deg, #13274f 0, #002244 100%); */
+    /* background-image: repeating-radial-gradient(rgb(13, 78, 197), rgb(8, 19, 68) 10%, rgb(0, 1, 54) 15%); */
+    /* background-image: repeating-radial-gradient(rgb(0, 1, 54), rgb(3, 34, 172) 10%, rgb(13, 78, 197) 15%); */
 }

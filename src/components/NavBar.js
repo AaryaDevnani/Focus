@@ -20,7 +20,7 @@ function NavBar() {
                     {auth.loggedIn 
                         ? 
                         <React.Fragment>
-                            <li><NavLink to='/logout' className='hoverLine' style={navLinkStyle}  >Logout</NavLink></li>
+                            
                             <li> <NavLink to='/dashboard' className='hoverLine' style={navLinkStyle} >Dashboard</NavLink></li>
                             <li> <label className='show'>Forums +</label>
                             <NavLink to='/forums' className='hoverLine' style={navLinkStyle} >Forums</NavLink> 
@@ -31,6 +31,7 @@ function NavBar() {
                             </ul>
                             </li>
                             <li><NavLink to='/restricted' className='hoverLine' style={navLinkStyle} >Restricted </NavLink></li>
+                            <li><NavLink to='/logout' className='hoverLine' style={navLinkStyle}  >Logout</NavLink></li>
                         </React.Fragment>
                         : 
                         <React.Fragment>
