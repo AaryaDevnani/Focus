@@ -177,13 +177,30 @@ def history():
         obj = json.loads(request.data)
         url = obj['url']
         time_spent = obj['time_spent']
-        restricted= obj['restricted']
-        result = cur.execute('INSERT INTO urls(url, restricted, time_spent, updated_timestamp) VALUES (%s, %s, %s, NOW())', (url, restricted, time_spent))
+        restricted = obj['restricted']
+        result = cur.execute(
+            'INSERT INTO urls(url, restricted, time_spent, updated_timestamp) VALUES (%s, %s, %s, NOW())', (url, restricted, time_spent))
 
         mysql.connection.commit()
         cur.close()
 
         return jsonify({"error_message": ""})
+
+
+@app.route('/api/sendemail', methods=['GET', 'POST'])
+def sendMail():
+    if request.method == "POST":
+        obj = json.loads(request.data)
+        url = obj['url']
+        timestamp = obj['timestamp']
+        email = obj['email']
+        msg = Message('Child Browsing Activity', sender='noreply@demo.com', recipients=[
+                      email])
+        msg.body = f"Your child is accessing a website \"{url}\" marked restricted by you at {timestamp}"
+        mail.send(msg)
+
+        return jsonify({"error_message": ""})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
