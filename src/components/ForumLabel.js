@@ -76,7 +76,7 @@ function ForumLabel({match}) {
     
     return (
         <div>
-            <div className="container bootstrap snippets bootdey">
+            <div className="containerForum bootstrap snippets bootdey">
                 <div className="row">
                     <div className="col-md-12 bg-white ">
                         <div className="chat-message">
