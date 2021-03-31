@@ -71,7 +71,7 @@ def login():
 def forums():
     cur = mysql.connection.cursor()
     if request.method == 'GET':
-        result = cur.execute('SELECT * FROM forum')
+        result = cur.execute('SELECT * FROM forum ORDER BY id desc')
         if result > 0:
             messages = cur.fetchall()
             return jsonify({"messages": messages, "error_message": ""})
@@ -97,7 +97,7 @@ def forums():
 def forumLabel(label):
     cur = mysql.connection.cursor()
     if request.method == 'GET':
-        result = cur.execute('SELECT * FROM forum WHERE label = %s', [label])
+        result = cur.execute('SELECT * FROM forum WHERE label = %s ORDER BY id desc' , [label])
         if result > 0:
             messages = cur.fetchall()
             return jsonify({"messages": messages, "error_message": ""})
@@ -123,7 +123,7 @@ def forumLabel(label):
 def restricted_urls():
     cur = mysql.connection.cursor()
     if request.method == 'GET':
-        result = cur.execute('SELECT * FROM restricted_urls')
+        result = cur.execute('SELECT * FROM restricted_urls ORDER BY id desc')
         if result > 0:
             restricted_urls = cur.fetchall()
             return jsonify({"restricted_urls": restricted_urls, "error_message": ""})
@@ -137,7 +137,7 @@ def restricted_url(id):
 
     if request.method == 'GET':
         result = cur.execute(
-            'SELECT * FROM restricted_urls where user_id = %s', [id])
+            'SELECT * FROM restricted_urls where user_id = %s ORDER BY id desc', [id])
         if result > 0:
             restricted_urls = cur.fetchall()
             return jsonify({"restricted_urls": restricted_urls, "error_message": ""})
@@ -167,7 +167,7 @@ def restricted_url(id):
 def history():
     cur = mysql.connection.cursor()
     if request.method == 'GET':
-        result = cur.execute('SELECT * FROM urls')
+        result = cur.execute('SELECT * FROM urls ORDER BY id desc')
         if result > 0:
             urls = cur.fetchall()
             return jsonify({"urls": urls, "error_message": ""})

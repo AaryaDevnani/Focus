@@ -1,6 +1,6 @@
 let user_id = 0
 let email = ""
-let restricted_sites=[]
+let restricted_sites=["www.instagram.com"]
 
  const getURLS = (user_id) => {
     var xhr = new XMLHttpRequest();
@@ -112,7 +112,7 @@ chrome.tabs.onActivated.addListener(tab => {
                         totaltime = (time/1000)+totaltime    
                         console.log("totaltime: "+ totaltime) 
                         if(totaltime > 3600){
-                            alert("It has been one hour since you've been borwsing the web. Press OK to continue.")
+                            alert("It has been one hour since you've been browsing the web. Press OK to continue.")
                             totaltime=0
                             break;
                         }                
